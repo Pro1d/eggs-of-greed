@@ -10,12 +10,12 @@ Presentation
 
 <img src="https://github.com/Pro1d/eggs-of-greed/blob/master/screenshots/intro.png" width=25% height=25%> <img src="https://github.com/Pro1d/eggs-of-greed/blob/master/screenshots/early-game.png" width=25% height=25%> <img src="https://github.com/Pro1d/eggs-of-greed/blob/master/screenshots/late-game.png" width=25% height=25%>
 
-*Eggs of Greed* is a small simulation game made for the [Spring 2D Jam 2023 on itch.io](https://itch.io/jam/spring-2d-jam-2023).
-- The theme was **chicken** :chicken: and obviously **spring** :sunflower:.
-- Buy chickens, harvest eggs and buy even more chickens :chicken::chicken::chicken:.
-- Unlock upgrades, expand your pen and, get the final trophy :trophy:.
-- The game has a pixel-art style with homemade sprites ✏️.
-- Made with **Godot 4**.
+*Eggs of Greed* is a small simulation game made for the [Spring 2D Jam 2023 on itch.io](https://itch.io/jam/spring-2d-jam-2023)
+- The theme was **chicken** :chicken: and (obviously) **spring** :sunflower:
+- Buy chickens, harvest eggs and buy even more chickens :chicken::chicken::chicken:
+- Unlock upgrades, expand your pen and, get the final trophy :trophy:
+- The game has a pixel-art style with homemade sprites ([shared on opengameart.org](https://opengameart.org/content/chicken-and-pen)) ✏️
+- Made with **Godot 4** <img src="https://github.com/godotengine/godot/blob/master/editor/icons/Godot.svg" width="18px" height="18px">
 
 Dev notes:
 ----------
