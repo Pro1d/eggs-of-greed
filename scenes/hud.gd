@@ -100,7 +100,7 @@ func populate_menu() -> void:
 	add_icon_item(flower_icon, upgrade_desc_text[OptionIndex.LAY_SPEED], OptionIndex.LAY_SPEED)
 	add_icon_item(golden_nuggets_icon, upgrade_desc_text[OptionIndex.GOLDEN_FEED], OptionIndex.GOLDEN_FEED)
 	add_icon_item(water_cup_icon, upgrade_desc_text[OptionIndex.SUPPLY], OptionIndex.SUPPLY)
-	menu.add_separator("Trophee")
+	menu.add_separator("Trophy")
 	add_item("Chicken Spring Cup", OptionIndex.CUP)
 	menu.id_pressed.connect(_on_purchase)
 	feed_button.text = "[%d] Feed" % [costs[OptionIndex.FEED]]
