@@ -15,6 +15,7 @@ Presentation
 - Buy chickens, harvest eggs and buy even more chickens :chicken::chicken::chicken:.
 - Unlock upgrades, expand your pen and, get the final trophy :trophy:.
 - The game has a pixel-art style with homemade sprites ✏️.
+- Made with **Godot 4**.
 
 Dev notes:
 ----------
