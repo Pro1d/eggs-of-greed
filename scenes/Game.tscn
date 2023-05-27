@@ -1,0 +1,535 @@
+[gd_scene load_steps=20 format=3 uid="uid://dp5lq5cg4x4em"]
+
+[ext_resource type="Script" path="res://scenes/Game.gd" id="1_ymo0f"]
+[ext_resource type="Script" path="res://scenes/TileMap.gd" id="3_2njsq"]
+[ext_resource type="Texture2D" uid="uid://dem06ax2v06tk" path="res://assets/images/chicken.png" id="3_g5wyo"]
+[ext_resource type="Theme" uid="uid://ctaech4bvmrey" path="res://resources/hud.theme" id="4_ol72x"]
+[ext_resource type="AudioStream" uid="uid://br84t2mfu0ucc" path="res://assets/sounds/destroy.ogg" id="4_rv0u2"]
+[ext_resource type="AudioStream" uid="uid://cjh04o872wd2y" path="res://assets/sounds/spawn.ogg" id="5_413i6"]
+[ext_resource type="Script" path="res://scenes/hud.gd" id="5_hxr0e"]
+[ext_resource type="PackedScene" uid="uid://cc0jx53djswb4" path="res://scenes/DustBurst.tscn" id="6_ga0uk"]
+[ext_resource type="Texture2D" uid="uid://70er41dv58j4" path="res://assets/images/seeds.atlastex" id="6_o7ygw"]
+[ext_resource type="Texture2D" uid="uid://1b5twa1jy7hd" path="res://assets/images/cup.atlastex" id="9_tifxp"]
+[ext_resource type="AudioStream" uid="uid://dge6g2i45ymox" path="res://assets/sounds/victory.ogg" id="10_l7eqp"]
+[ext_resource type="AudioStream" uid="uid://idv5w0bq0tm" path="res://assets/sounds/ambiance/birds-isaiah658.ogg" id="12_fwqnt"]
+[ext_resource type="AudioStream" uid="uid://dx7qtjny638r" path="res://assets/sounds/ambiance/choco-birds-run.mp3" id="13_15exu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhea4"]
+texture = ExtResource("3_g5wyo")
+2:5/0 = 0
+2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:5/0/physics_layer_0/angular_velocity = 0.0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0/custom_data_0 = true
+2:6/0 = 0
+2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:6/0/physics_layer_0/angular_velocity = 0.0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0/custom_data_0 = true
+0:6/0 = 0
+0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:6/0/physics_layer_0/angular_velocity = 0.0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0/custom_data_0 = true
+0:7/0 = 0
+0:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:7/0/physics_layer_0/angular_velocity = 0.0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:7/0/custom_data_0 = true
+1:7/0 = 0
+1:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:7/0/physics_layer_0/angular_velocity = 0.0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0/custom_data_0 = true
+2:7/0 = 0
+2:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:7/0/physics_layer_0/angular_velocity = 0.0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0/custom_data_0 = true
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5, 5, 0, 4, 3.5, 5, 0, 6)
+0:3/0/custom_data_1 = 0.9
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5, 5, 0, 4, 3.5, 5, 0, 6)
+2:3/0/custom_data_1 = 0.9
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.5, 4.5, 0, 3, 6, 5, -0.5, 6.5)
+4:3/0/custom_data_1 = 0.9
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5, 5, 0, 4, 3.5, 5, 0, 6)
+1:3/0/custom_data_1 = 0.9
+0:5/0 = 0
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0/custom_data_0 = true
+1:5/0 = 0
+1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:5/0/physics_layer_0/angular_velocity = 0.0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0/custom_data_0 = true
+0:4/0 = 0
+0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:4/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+3:7/next_alternative_id = 8
+3:7/0 = 0
+3:7/0/z_index = -1
+3:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:7/0/physics_layer_0/angular_velocity = 0.0
+3:7/0/custom_data_1 = 1.0
+3:6/next_alternative_id = 2
+3:6/0 = 0
+3:6/0/z_index = -1
+3:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:6/0/physics_layer_0/angular_velocity = 0.0
+3:6/0/custom_data_1 = 1.0
+4:6/0 = 0
+4:6/0/z_index = -1
+4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:6/0/physics_layer_0/angular_velocity = 0.0
+4:6/0/custom_data_1 = 1.0
+4:7/0 = 0
+4:7/0/z_index = -1
+4:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:7/0/physics_layer_0/angular_velocity = 0.0
+4:7/0/custom_data_1 = 1.0
+1:6/0 = 0
+1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:6/0/physics_layer_0/angular_velocity = 0.0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0/custom_data_0 = true
+5:6/0 = 0
+5:6/0/z_index = -1
+5:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:6/0/physics_layer_0/angular_velocity = 0.0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, 8, 0, 0, 8, -2.5, 8, 8)
+5:6/0/custom_data_1 = 0.8
+5:7/0 = 0
+5:7/0/z_index = -1
+5:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:7/0/physics_layer_0/angular_velocity = 0.0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, -8, 1.5, -1.5, 8, 1, 8, -8)
+5:7/0/custom_data_1 = 0.8
+6:7/next_alternative_id = 5
+6:7/0 = 0
+6:7/0/z_index = -1
+6:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:7/0/physics_layer_0/angular_velocity = 0.0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 0.5, 8, 0, 8, -8)
+6:7/0/custom_data_1 = 0.5
+6:7/1 = 1
+6:7/1/flip_h = true
+6:7/1/transpose = true
+6:7/1/z_index = -1
+6:7/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:7/1/physics_layer_0/angular_velocity = 0.0
+6:7/1/physics_layer_0/polygon_0/points = PackedVector2Array(-0.5, -8, -0.5, 8, 8, 8, 8, -8)
+6:7/1/custom_data_1 = 0.5
+6:7/2 = 2
+6:7/2/transpose = true
+6:7/2/z_index = -1
+6:7/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:7/2/physics_layer_0/angular_velocity = 0.0
+6:7/2/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 1, -8, 1, 8, -8, 8)
+6:7/2/custom_data_1 = 0.5
+6:7/3 = 3
+6:7/3/flip_v = true
+6:7/3/z_index = -1
+6:7/3/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:7/3/physics_layer_0/angular_velocity = 0.0
+6:7/3/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 0, 8, 0, 8, -8)
+6:7/3/custom_data_1 = 0.5
+6:6/next_alternative_id = 5
+6:6/0 = 0
+6:6/0/z_index = -1
+6:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:6/0/physics_layer_0/angular_velocity = 0.0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -1, 8, -1.5, 8, 8, -8, 8)
+6:6/0/custom_data_1 = 0.5
+6:6/1 = 1
+6:6/1/transpose = true
+6:6/1/z_index = -1
+6:6/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:6/1/physics_layer_0/angular_velocity = 0.0
+6:6/1/physics_layer_0/polygon_0/points = PackedVector2Array(-0.5, -8, -1, 8, 8, 8, 8, -8)
+6:6/1/custom_data_1 = 0.5
+6:6/2 = 2
+6:6/2/flip_h = true
+6:6/2/transpose = true
+6:6/2/z_index = -1
+6:6/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:6/2/physics_layer_0/angular_velocity = 0.0
+6:6/2/physics_layer_0/polygon_0/points = PackedVector2Array(0.5, -8, 0, 8, -8, 8, -8, -8)
+6:6/2/custom_data_1 = 0.5
+6:6/3 = 3
+6:6/3/flip_v = true
+6:6/3/z_index = -1
+6:6/3/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:6/3/physics_layer_0/angular_velocity = 0.0
+6:6/3/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.5, 8, 0.5, 8, -8, -8, -8)
+6:6/3/custom_data_1 = 0.5
+7:6/0 = 0
+7:6/0/z_index = -1
+7:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:6/0/physics_layer_0/angular_velocity = 0.0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2, -0.5, 1, 1.5, 8, -8, 8)
+7:6/0/custom_data_1 = 0.8
+7:7/0 = 0
+7:7/0/z_index = -1
+7:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:7/0/physics_layer_0/angular_velocity = 0.0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -2, -1.5, 0.5, -8, -8, -8)
+7:7/0/custom_data_1 = 0.8
+4:4/0 = 0
+4:4/0/z_index = 1
+4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:4/0/physics_layer_0/angular_velocity = 0.0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0/custom_data_0 = true
+5:4/0 = 0
+5:4/0/z_index = 1
+5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:4/0/physics_layer_0/angular_velocity = 0.0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0/custom_data_0 = true
+5:5/0 = 0
+5:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:5/0/physics_layer_0/angular_velocity = 0.0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0/custom_data_0 = true
+4:5/0 = 0
+4:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:5/0/physics_layer_0/angular_velocity = 0.0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0/custom_data_0 = true
+6:5/0 = 0
+6:5/0/z_index = -1
+6:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:5/0/physics_layer_0/angular_velocity = 0.0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:5/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_r7tkr"]
+physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "is_fence"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "usable"
+custom_data_layer_1/type = 3
+sources/0 = SubResource("TileSetAtlasSource_xhea4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkqc4"]
+atlas = ExtResource("3_g5wyo")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpkpw"]
+atlas = ExtResource("3_g5wyo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="Animation" id="Animation_0d8tm"]
+resource_name = "intro"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer/VBoxContainer/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_acpfo"]
+_data = {
+"intro": SubResource("Animation_0d8tm")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_ymo0f")
+
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_r7tkr")
+format = 2
+layer_0/name = "visual"
+layer_0/y_sort_enabled = true
+layer_0/y_sort_origin = 5
+layer_0/tile_data = PackedInt32Array(1, 65536, 5, 65547, 65536, 5, 2, 65536, 7, 3, 65536, 5, 0, 0, 5, 65536, 131072, 6, 262144, 65536, 6, 327680, 131072, 6, 458752, 65536, 6, 524288, 131072, 6, 4, 262144, 4, 5, 327680, 4, 6, 65536, 5, 7, 65536, 6, 9, 131072, 5, 10, 327680, 7, 13, 393216, 196614, 14, 393216, 7, 15, 393216, 196614, 65551, 131072, 5, 196623, 131072, 6, 262159, 0, 6, 327695, 131072, 6, 393231, 65536, 6, 458767, 131072, 6, 524303, 0, 6, 8, 65536, 5, 12, 393216, 7, 11, 393216, 7, 196610, 196608, 6, 131078, 196608, 6, 327684, 196608, 6, 262157, 196608, 7, 196612, 262144, 6, 458764, 393216, 6, 65549, 65536, 5, 65545, 0, 7, 65538, 196608, 7, 327686, 196608, 7, 458755, 65536, 5, 524298, 393216, 65542, 393230, 65536, 5, 196615, 131072, 6, 65540, 262144, 5, 262145, 65536, 5, 131073, 262144, 7, 196619, 196608, 7, 262147, 65536, 7, 327691, 262144, 6, 65543, 131072, 6, 327688, 196608, 7, 458765, 458752, 6, 524301, 393216, 131078, 458763, 393216, 196615, 524300, 393216, 5, 524299, 393216, 5, 524296, 262144, 7, 458756, 65536, 5, 327682, 196608, 6, 262146, 65536, 5, 131075, 196608, 7, 131076, 196608, 7, 131080, 262144, 7, 196617, 262144, 6, 262154, 196608, 6, 196622, 196608, 7, 262158, 262144, 7, 458762, 327680, 6, 65546, 65536, 5, 262151, 65536, 6, 393227, 65536, 5, 393228, 65536, 7, 65541, 327680, 5, 131079, 0, 6, 393226, 65536, 5, 393229, 65536, 5, 65548, 65536, 7, 196618, 262144, 7, 327692, 196608, 7, 262156, 262144, 7, 196620, 196608, 7, 458766, 196608, 6, 524302, 262144, 7, 196613, 196608, 6, 65544, 196608, 6, 65539, 262144, 7, 458753, 65536, 5, 262150, 65536, 5, 262149, 65536, 7, 262148, 65536, 5, 196608, 131072, 6, 131072, 0, 6, 393216, 131072, 6, 458759, 65536, 6, 458758, 65536, 5, 458754, 65536, 7, 458757, 65536, 7, 458760, 65536, 5, 524294, 262144, 6, 393222, 262144, 7, 393220, 262144, 7, 393219, 196608, 6, 524292, 262144, 7, 393217, 262144, 6, 196609, 196608, 6, 196616, 196608, 7, 65550, 65536, 5, 393225, 65536, 6, 524295, 131072, 6, 262153, 131072, 5, 458761, 131072, 7, 262152, 65536, 5, 327689, 131072, 6, 327681, 196608, 6, 589824, 0, 6, 655360, 131072, 6, 720896, 0, 7, 589825, 196608, 6, 655361, 262144, 6, 720897, 65536, 5, 720898, 65536, 7, 589827, 262144, 6, 655363, 262144, 7, 720899, 65536, 5, 589828, 262144, 7, 720900, 65536, 5, 720901, 65536, 7, 589830, 262144, 7, 655366, 262144, 7, 720902, 65536, 5, 589831, 0, 7, 655367, 262144, 6, 720903, 65536, 5, 589832, 131072, 5, 655368, 131072, 6, 720904, 65536, 6, 655369, 196608, 6, 720905, 65536, 5, 589834, 393216, 65543, 655370, 327680, 7, 720906, 65536, 5, 589835, 393216, 5, 655371, 393216, 196614, 720907, 65536, 7, 589836, 393216, 5, 655372, 393216, 7, 720908, 65536, 5, 589837, 393216, 131079, 655373, 458752, 7, 720909, 65536, 7, 655374, 196608, 7, 720910, 65536, 5, 589839, 131072, 6, 655375, 131072, 6, 720911, 131072, 7, 131087, 131072, 6, 131082, 196608, 6, 131083, 262144, 7, 131085, 262144, 6, 131084, 131072, 3, 524289, 196608, 5, 655362, 196608, 5, 589829, 196608, 5, 589833, 65536, 3, 65537, 0, 3)
+script = ExtResource("3_2njsq")
+
+[node name="DestroyAudio" type="AudioStreamPlayer" parent="TileMap"]
+stream = ExtResource("4_rv0u2")
+volume_db = -9.527
+bus = &"fx"
+
+[node name="SpawnAudio" type="AudioStreamPlayer" parent="TileMap"]
+stream = ExtResource("5_413i6")
+volume_db = -9.947
+bus = &"fx"
+
+[node name="Particles" type="Node2D" parent="TileMap"]
+
+[node name="DustBurst" parent="TileMap/Particles" instance=ExtResource("6_ga0uk")]
+
+[node name="DustBurst2" parent="TileMap/Particles" instance=ExtResource("6_ga0uk")]
+
+[node name="DustBurst3" parent="TileMap/Particles" instance=ExtResource("6_ga0uk")]
+
+[node name="DustBurst4" parent="TileMap/Particles" instance=ExtResource("6_ga0uk")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_ol72x")
+script = ExtResource("5_hxr0e")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -78.0
+offset_right = 296.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_qkqc4")
+stretch_mode = 5
+
+[node name="EggsLabel" type="Label" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "0000"
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = SubResource("AtlasTexture_mpkpw")
+stretch_mode = 5
+
+[node name="ChickenLabel" type="Label" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+text = "100/100"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="FeedButton" type="Button" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(270, 0)
+layout_mode = 2
+tooltip_text = "+1 egg on next laying
+for all chickens
+[Shortcut F]"
+focus_mode = 0
+text = "[10] Feed"
+icon = ExtResource("6_o7ygw")
+expand_icon = true
+
+[node name="Timer" type="Timer" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer/FeedButton"]
+wait_time = 10.0
+one_shot = true
+
+[node name="UpgradeMenu" type="MenuButton" parent="CanvasLayer/HUD/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Buy"
+flat = false
+
+[node name="VictoryContainer" type="PanelContainer" parent="CanvasLayer/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.5
+offset_top = -22.0
+offset_right = 3.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/VictoryContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "Tadaaa!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_tifxp")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "You win the Chicken Spring Cup!
+Well done, it's so... good, I guess.
+You know Spring, the weather, the lil'flowers, all those chickens...
+Yeah, it's.. it's cool. Really."
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/HUD/VictoryContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "I want to harvest more eggs"
+
+[node name="VictoryAudio" type="AudioStreamPlayer" parent="CanvasLayer/HUD/VictoryContainer"]
+stream = ExtResource("10_l7eqp")
+volume_db = 3.176
+pitch_scale = 0.78
+bus = &"fx"
+
+[node name="IntroOverlay" type="ColorRect" parent="CanvasLayer/HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/HUD/IntroOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="Label" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Winter has finally ended!"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "The snow slowly melts in
+small brooks."
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "The sun softly shines over
+the flowering meadow."
+horizontal_alignment = 1
+
+[node name="ChickenLabel" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "The chickens go out to
+enjoy the weather."
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "It is the ideal time to..."
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "harvest eggs & make profits."
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="CanvasLayer/HUD/IntroOverlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Press any key to start..."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/HUD/IntroOverlay"]
+libraries = {
+"": SubResource("AnimationLibrary_acpfo")
+}
+
+[node name="BirdsPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("12_fwqnt")
+volume_db = -6.341
+autoplay = true
+bus = &"ambient"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("13_15exu")
+volume_db = -24.0
+autoplay = true
+bus = &"ambient"

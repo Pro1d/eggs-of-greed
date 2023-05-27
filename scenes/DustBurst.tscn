@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc0jx53djswb4"]
+
+[ext_resource type="Texture2D" uid="uid://dem06ax2v06tk" path="res://assets/images/chicken.png" id="1_xs5ka"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wvi0"]
+atlas = ExtResource("1_xs5ka")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="Gradient" id="Gradient_7i4fl"]
+offsets = PackedFloat32Array(0, 0.685022, 1)
+colors = PackedColorArray(1, 1, 1, 0.917647, 1, 1, 1, 0.92549, 1, 1, 1, 0)
+
+[node name="DustBurst" type="CPUParticles2D"]
+z_index = 400
+emitting = false
+amount = 3
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+texture = SubResource("AtlasTexture_3wvi0")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 24.0
+initial_velocity_max = 48.0
+angular_velocity_min = -46.08
+angular_velocity_max = 63.36
+damping_min = 100.0
+damping_max = 100.0
+angle_max = 360.0
+scale_amount_min = 3.6
+scale_amount_max = 4.4
+color = Color(0.862745, 0.862745, 0.862745, 0.498039)
+color_ramp = SubResource("Gradient_7i4fl")
